@@ -1,10 +1,11 @@
 # Architectural Testimonials Module
 
 This repository contains a high-fidelity, responsive client testimonials component designed for modern architectural and design portfolios. The module features dual-directional infinite vertical scrolling, CSS isolation for seamless integration, and a sophisticated aesthetic rooted in minimalist design principles.
+<img width="1920" height="1257" alt="module" src="https://github.com/user-attachments/assets/fe1035cd-fd2d-44db-b527-4cc71f6cd68a" />
 
 ## Live Preview
 
-**[View Live Demo](https:lefajmofokeng.github.io/Module/)**
+**[View Live Demo](https//:lefajmofokeng.github.io/Module/)**
 
 ---
 
@@ -64,7 +65,3 @@ To customize the component, modify the following variables in `styles.css`:
 ## License
 
 This project is licensed under the MIT License. You are free to use, modify, and distribute this component in both personal and commercial projects.
-
-**Created by Lefaj Mofokeng.**
-
-Would you like me to generate the React component version of this module to include in a separate folder?
