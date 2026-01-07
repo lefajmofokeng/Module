@@ -5,7 +5,7 @@ This repository contains a high-fidelity, responsive client testimonials compone
 
 ## Live Preview
 
-**[View Live Demo](https//:lefajmofokeng.github.io/Module/)**
+**[View Live Demo](https//:lefajmofokeng.github.io/Module)**
 
 ---
 
