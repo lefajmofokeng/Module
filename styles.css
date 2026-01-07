@@ -1,0 +1,176 @@
+/* =========================================
+           CSS Isolation: Prefix 'tz-' used
+           ========================================= */
+
+        :root {
+            --tz-font-family: 'Inter Tight', sans-serif;
+            --tz-color-bg-main: #FFF7F0;
+            --tz-color-bg-card: #ffffff;
+            --tz-color-text-dark: #111111;
+            --tz-color-text-grey: #666666;
+            --tz-color-accent: #F06449; 
+            --tz-card-shadow: 0 4px 10px rgba(0, 0, 0, 0.026);
+            --tz-border-radius-xl: 40px;
+            --tz-border-radius-lg: 24px;
+            --tz-gap: 24px; /* The specific spacing requested */
+        }
+
+        .tz-component-wrapper * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        .tz-component-wrapper {
+            font-family: var(--tz-font-family);
+            background-color: var(--tz-color-bg-main);
+            color: var(--tz-color-text-dark);
+            padding: 100px 40px;
+            border-radius: var(--tz-border-radius-xl);
+            overflow: hidden;
+            margin: 20px;
+        }
+
+        .tz-container {
+            max-width: 1300px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        /* --- Right Column: Content --- */
+        .tz-content-block {
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+            z-index: 2;
+        }
+
+        .tz-headline {
+            font-size: 56px;
+            font-weight: 600;
+            line-height: 1.05;
+            letter-spacing: -1.5px;
+        }
+
+        .tz-subtext {
+            font-size: 18px;
+            line-height: 1.6;
+            color: var(--tz-color-text-grey);
+            max-width: 480px;
+        }
+
+        .tz-cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background-color: var(--tz-color-accent);
+            color: white;
+            text-decoration: none;
+            padding: 18px 36px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            width: fit-content;
+        }
+
+        .tz-cta-button:hover {
+            background-color: #e05338;
+            transform: translateX(5px);
+        }
+
+        /* --- Left Column: Moving Testimonials --- */
+        .tz-testimonials-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--tz-gap);
+            height: 750px;
+            overflow: hidden;
+            position: relative;
+            mask-image: linear-gradient(to bottom, transparent, black 15%, black 85%, transparent);
+            -webkit-mask-image: linear-gradient(to bottom, transparent, black 15%, black 85%, transparent);
+        }
+
+        .tz-scroll-col {
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Inner group spacing to maintain gap between Set 1 and Set 2 */
+        .tz-card-group-inner {
+            display: flex;
+            flex-direction: column;
+            gap: var(--tz-gap);
+            padding-bottom: var(--tz-gap); /* Force gap between clones */
+        }
+
+        @keyframes tz-scroll-up {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-50%); }
+        }
+
+        @keyframes tz-scroll-down {
+            0% { transform: translateY(-50%); }
+            100% { transform: translateY(0); }
+        }
+
+        .tz-col-up { animation: tz-scroll-up 35s linear infinite; }
+        .tz-col-down { animation: tz-scroll-down 35s linear infinite; }
+
+        .tz-testimonials-wrapper:hover .tz-scroll-col {
+            animation-play-state: paused;
+        }
+
+        /* Card Styling */
+        .tz-card {
+            background-color: var(--tz-color-bg-card);
+            padding: 36px;
+            border-radius: var(--tz-border-radius-lg);
+            transition: transform 0.3s ease;
+        }
+
+        .tz-card:hover {
+            transform: scale(1.02);
+        }
+
+        .tz-card-text {
+            font-size: 17px;
+            line-height: 1.6;
+            color: var(--tz-color-text-dark);
+            margin-bottom: 28px;
+            font-weight: 400;
+        }
+
+        .tz-user-info {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .tz-avatar {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .tz-user-details h4 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 2px;
+        }
+
+        .tz-user-location {
+            font-size: 14px;
+            color: var(--tz-color-text-grey);
+        }
+
+        /* Responsive Fixes */
+        @media (max-width: 1024px) {
+            .tz-container { grid-template-columns: 1fr; gap: 40px; }
+            .tz-content-block { order: -1; text-align: center; align-items: center; }
+            .tz-headline { font-size: 42px; }
+        }
